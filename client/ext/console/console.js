@@ -442,6 +442,8 @@ return ext.register("ext/console/console", {
                     this.write("Working directory changed.");
                 }
                 break;
+            case "ps":
+            case "python":
             case "git":
             case "pwd":
             case "ls":
