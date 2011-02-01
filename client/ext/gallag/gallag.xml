@@ -1,0 +1,42 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">  
+    <a:hbox anchors="0 0 0 0" id="hbox1">
+        <a:browser
+          id     = "browser1"
+          value  = "http://tinyurl.com/5scm7u8"
+          width  = "390"
+          height = "295">
+        </a:browser>
+        <a:browser
+          id     = "browser2"
+          value  = "http://tinyurl.com/5scm7u8"
+          width  = "390"
+          height = "295">
+        </a:browser>
+        <a:browser
+          id     = "browser3"
+          value  = "http://tinyurl.com/5scm7u8"
+          width  = "390"
+          height = "295">
+        </a:browser>
+        <!--
+        <a:text id="txtGallag"
+          margin     = "3 0 0 0"
+          flex       = "1"
+          scrolldown = "true"
+          textselect = "true"
+          focussable = "true"
+          class      = "console_text" />
+        <a:scrollbar
+          for       = "txtGallag"
+          margin    = "0"
+          skin      = "wnscrollbar"
+          width     = "17" />
+        -->
+        <a:vbox id="vbox1">
+          <a:button caption="Compile" onclick="alert('Compile');" />
+          <a:button caption="Run" onclick="alert('Run ... away!?');" />
+          <a:button caption="Stop" onclick="alert('Stop');" />
+          <a:button caption="Click Me!" onclick="alert('Hello World!');" />
+        </a:vbox>
+    </a:hbox>
+</a:application>
