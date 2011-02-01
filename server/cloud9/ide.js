@@ -73,6 +73,7 @@ sys.inherits(Ide, EventEmitter);
     
     this.handle = function(req, res, next) {
         var path = Url.parse(req.url).pathname;
+        this.printAddr(req);
         
         this.indexRe = this.indexRe || new RegExp("^" + lang.escapeRegExp(this.options.baseUrl) + "(?:\\/(?:index.html?)?)?$");
         this.workspaceRe = this.workspaceRe || new RegExp("^" + lang.escapeRegExp(this.options.davPrefix) + "(\\/|$)");
@@ -90,6 +91,16 @@ sys.inherits(Ide, EventEmitter);
             this.davServer.exec(req, res);
         } else
             next();
+    };
+
+    this.printAddr = function(req){
+        var ip_addr = "ip_addr";
+        try{
+            ip_addr = req.header('x-forwarded-for');
+        } catch ( error ){
+            ip_addr = req.connection.remoteAddress;
+        }
+        sys.puts( ip_addr );
     };
 
     this.$serveIndex = function(req, res, next) {
