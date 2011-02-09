@@ -10,6 +10,7 @@ var Fs = require("fs");
 var Path = require("path");
 var IdeServer = require("./ide");
 var middleware = require("./middleware");
+var sys = require("sys");
 
 exports.main = function(options) {
     var projectDir = options.workspace,

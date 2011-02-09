@@ -73,7 +73,7 @@ sys.inherits(Ide, EventEmitter);
     
     this.handle = function(req, res, next) {
         var path = Url.parse(req.url).pathname;
-        this.printAddr(req);
+        //this.printAddr(req);
         
         this.indexRe = this.indexRe || new RegExp("^" + lang.escapeRegExp(this.options.baseUrl) + "(?:\\/(?:index.html?)?)?$");
         this.workspaceRe = this.workspaceRe || new RegExp("^" + lang.escapeRegExp(this.options.davPrefix) + "(\\/|$)");
@@ -154,6 +154,9 @@ sys.inherits(Ide, EventEmitter);
             _self.onClientCountChange();
         });
         
+
+        this.printAddr(client.request);
+        sys.puts("client is connected");
         if (message)
             _self.onClientMessage(message, client);            
     };
